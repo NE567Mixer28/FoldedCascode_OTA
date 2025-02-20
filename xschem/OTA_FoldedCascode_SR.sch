@@ -13,7 +13,7 @@ ypos2=2
 
 
 unity=1
-x1=0
+x1=-1.25e-07
 
 
 
@@ -33,7 +33,7 @@ color="4 5"
 node="OUT
 in+"
 
-y1=0.37
+y1=0.89
 x2=0.1
 
 
@@ -41,9 +41,9 @@ x2=0.1
 subdivx=10
 subdivy=1
 divx=15
-divy=5
+divy=20
 rainbow=1
-y2=2.22}
+y2=1.81}
 N -780 -480 -780 -440 {
 lab=GND}
 N -920 -460 -920 -430 {
@@ -287,7 +287,7 @@ C {devices/gnd.sym} -780 -440 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -780 -480 0 1 {name=p8 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -920 -430 0 1 {name=p9 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -920 -550 0 0 {name=p10 sig_type=std_logic lab=VDD}
-C {devices/vsource.sym} -920 -320 0 0 {name=Vbias value="0 PULSE(0 1.8 0 100n 100n 50m 100m)"
+C {devices/vsource.sym} -920 -320 0 0 {name=Vbias value="0 PULSE(0 0.9 0 100n 100n 50m 100m)"
 
 }
 C {devices/lab_pin.sym} -920 -370 0 0 {name=p14 sig_type=std_logic lab=IN+}
