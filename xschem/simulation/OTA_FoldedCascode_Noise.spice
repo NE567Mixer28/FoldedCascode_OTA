@@ -5,7 +5,7 @@
 *.ipin IN+
 *.ipin MINUS
 *.opin OUT
-VbiasR1 IN+ net1 0 ac 1 0 sin(0 5u 50 0 0 0)
+VbiasR1 IN+ net1 0 ac 1 0 sin(0 500u 50 0 0 0)
 V2 net1 GND 0.9
 XC3 OUT GND sky130_fd_pr__cap_mim_m3_1 W=25 L=20 MF=1 m=1
 C2 GND MINUS 1 m=1
@@ -53,7 +53,7 @@ Vc5 Vp1 GND 500m
   write OTA_FoldedCascode_Noise.raw
 
   set appendwrite
-  noise v(OUT) VbiasR1 dec 10 1 1e3
+  noise v(OUT) VbiasR1 dec 10 0.01 1e3
   remzerovec
   write OTA_FoldedCascode_Noise.raw
 

@@ -13,7 +13,7 @@ ypos2=2
 
 
 unity=1
-x1=-1.25e-07
+x1=0
 
 
 
@@ -34,16 +34,17 @@ node="OUT
 in+"
 
 y1=0.89
-x2=0.1
+
 
 
 
 subdivx=10
 subdivy=1
-divx=15
+divx=10
 divy=20
 rainbow=1
-y2=1.81}
+y2=1.81
+x2=0.000005}
 N -780 -480 -780 -440 {
 lab=GND}
 N -920 -460 -920 -430 {

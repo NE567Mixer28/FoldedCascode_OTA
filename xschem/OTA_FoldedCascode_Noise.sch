@@ -251,7 +251,7 @@ value="
   write OTA_FoldedCascode_Noise.raw
 
   set appendwrite
-  noise v(OUT) VbiasR1 dec 10 1 1e3
+  noise v(OUT) VbiasR1 dec 10 0.01 1e3
   remzerovec
   write OTA_FoldedCascode_Noise.raw
 
@@ -269,7 +269,7 @@ xschem raw_read $netlist_dir/OTA_FoldedCascode_Noise.raw noise
 }
 C {sky130_fd_pr/corner.sym} -2230 -460 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/vsource.sym} -1270 -180 0 0 {name=VbiasR1 value="0 ac 1 0
-+ sin(0 5u 50 0 0 0)"}
++ sin(0 500u 50 0 0 0)"}
 C {devices/lab_pin.sym} -1270 -50 0 1 {name=p3 sig_type=std_logic lab=GND}
 C {devices/vsource.sym} -1270 -100 0 0 {name=V2 value=0.9 savecurrent=false}
 C {devices/lab_wire.sym} -70 -160 0 0 {name=p30 sig_type=std_logic lab=GND}

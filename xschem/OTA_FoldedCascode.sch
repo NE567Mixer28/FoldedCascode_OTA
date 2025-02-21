@@ -299,7 +299,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 520 -130 0 1 {name=M3
 L=10
-W=2.5
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -313,7 +313,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 700 -130 0 0 {name=M4
 L=10
-W=2.5
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

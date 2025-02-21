@@ -33,12 +33,13 @@ y2=90
 
 
 
-x2=7
+
 divx=8
 
 y1=-20
-x1=5.5511151e-17
-divy=10}
+
+divy=10
+x2=7}
 B 2 1720 -840 2270 -520 {flags=graph,unlocked
 
 
@@ -66,11 +67,11 @@ subdivx=3
 color=4
 node=OUT
 
-y1=0
+y1=0.7
 x2=0.099999999
 
-y2=1.8
-divy=5}
+y2=1.1
+divy=10}
 B 2 1170 -500 1720 -250 {flags=graph,unlocked
 rawfile=$netlist_dir/OTA_FoldedCascode_AC.raw
 sim_type=ac
@@ -82,7 +83,7 @@ ypos2=2
 subdivy=1
 unity=1
 
-x2=7
+
 
 subdivx=8
 node="ph(out) 180-"
@@ -95,16 +96,17 @@ divx=8
 sweep=""
 
 x1=0
-divy=30}
+divy=8
+x2=7}
 B 2 1170 -840 1720 -520 {flags=graph,unlocked
 
 
 ypos1=0
 ypos2=2
-divy=5
+divy=10
 subdivy=1
 unity=1
-x1=0
+x1=0.0027704178
 
 
 
@@ -124,31 +126,24 @@ subdivx=3
 
 
 
-x2=0.1
+x2=0.0810462
 
 
-y1=0.89998
-y2=0.90002
+y1=0.89916115
+
 color=6
-node=in+}
+node=in+
+y2=0.90036344}
 N -440 -380 -440 -360 {
 lab=IN+}
 N -440 -300 -440 -280 {
 lab=#net1}
 N -440 -220 -440 -200 {
 lab=GND}
-N 830 -370 830 0 {
+N 800 -420 800 -400 {
 lab=OUT}
-N 770 -370 830 -370 {
-lab=OUT}
-N 950 -480 950 -460 {
-lab=OUT}
-N 770 -480 950 -480 {
-lab=OUT}
-N 950 -400 950 -360 {
+N 800 -340 800 -300 {
 lab=GND}
-N -30 40 -30 100 {
-lab=MINUS}
 N -30 160 -30 190 {
 lab=GND}
 N 420 0 620 0 {
@@ -159,8 +154,6 @@ N -30 0 290 0 {
 lab=MINUS}
 N -30 0 -30 40 {
 lab=MINUS}
-N 620 0 830 0 {
-lab=OUT}
 N 330 -750 370 -750 {
 lab=VDD}
 N 440 -110 480 -110 {
@@ -336,7 +329,7 @@ lab=GND}
 N -620 -370 -620 -350 {
 lab=Vp}
 N 50 -600 50 -570 {
-lab=#net2}
+lab=D12}
 N 50 -710 50 -660 {
 lab=VDD}
 N 50 -630 120 -630 {
@@ -357,14 +350,20 @@ N -550 -290 -550 -270 {
 lab=GND}
 N -550 -370 -550 -350 {
 lab=Vp1}
-N 630 -370 770 -370 {
+N 0 -590 50 -590 {
+lab=D12}
+N 670 -420 850 -420 {
 lab=OUT}
-N 630 -420 630 -370 {
+N 710 -420 710 -0 {
 lab=OUT}
-N 630 -480 630 -420 {
+N 620 -0 710 0 {
 lab=OUT}
-N 630 -480 770 -480 {
-lab=OUT}
+N -30 130 -30 160 {
+lab=GND}
+N -30 40 -30 70 {
+lab=MINUS}
+N -60 -590 -0 -590 {
+lab=D12}
 C {devices/launcher.sym} 1890 -330 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
@@ -411,12 +410,12 @@ xschem raw_read $netlist_dir/OTA_FoldedCascode_AC.raw tran
 C {sky130_fd_pr/corner.sym} -1120 -850 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/lab_pin.sym} -440 -380 0 0 {name=p14 sig_type=std_logic lab=IN+}
 C {devices/vsource.sym} -440 -330 0 0 {name=VbiasR1 value="0 ac 1 0
-+ sin(0 2m 50 0 0 0)"}
++ sin(0 500u 10 0 0 0)"}
 C {devices/lab_pin.sym} -440 -200 0 1 {name=p3 sig_type=std_logic lab=GND}
 C {devices/vsource.sym} -440 -250 0 0 {name=V2 value=0.9 savecurrent=false}
-C {devices/lab_wire.sym} 950 -360 0 0 {name=p30 sig_type=std_logic lab=GND}
-C {sky130_fd_pr/cap_mim_m3_1.sym} 950 -430 0 0 {name=C3 model=cap_mim_m3_1 W=25 L=20 MF=1 spiceprefix=X}
-C {devices/capa.sym} -30 130 2 1 {name=C2
+C {devices/lab_wire.sym} 800 -300 0 0 {name=p30 sig_type=std_logic lab=GND}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 800 -370 0 0 {name=C3 model=cap_mim_m3_1 W=25 L=20 MF=1 spiceprefix=X}
+C {devices/capa.sym} -30 100 2 1 {name=C2
 m=1
 value=1
 footprint=1206
@@ -432,7 +431,7 @@ C {devices/iopin.sym} -330 -570 0 0 {name=p1 lab=VDD}
 C {devices/iopin.sym} -330 -540 0 0 {name=p2 lab=GND}
 C {devices/ipin.sym} -150 -360 0 0 {name=p4 lab=IN+}
 C {devices/ipin.sym} 250 -360 0 1 {name=p6 lab=MINUS}
-C {devices/opin.sym} 670 -420 0 0 {name=p7 lab=OUT}
+C {devices/opin.sym} 850 -420 0 0 {name=p7 lab=OUT}
 C {devices/vsource.sym} -520 -490 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -420 -440 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -420 -480 0 1 {name=p8 sig_type=std_logic lab=GND}
@@ -470,7 +469,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 370 -200 0 1 {name=M3
 L=10
-W=2.5
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -484,7 +483,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 550 -200 0 0 {name=M4
 L=10
-W=2.5
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -646,3 +645,4 @@ C {devices/lab_pin.sym} -550 -370 0 0 {name=p36 sig_type=std_logic lab=Vp1}
 C {devices/lab_pin.sym} -550 -270 0 1 {name=p37 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -60 -540 0 0 {name=p38 sig_type=std_logic lab=Vp1}
 C {devices/lab_pin.sym} -60 -630 0 0 {name=p39 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} -60 -590 0 0 {name=p5 sig_type=std_logic lab=D12}
